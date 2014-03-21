@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['spi0clk',['SPI0CLK',['../group__x_g_p_i_o___peripheral___pin.html#ga54bd70f65ebc72bdc509e63b7b8eb81d',1,'xgpio.h']]],
+  ['spi0cs',['SPI0CS',['../group__x_g_p_i_o___peripheral___pin.html#gac79bb36552f79205849cd1e62a74ca7a',1,'xgpio.h']]],
+  ['spi0miso',['SPI0MISO',['../group__x_g_p_i_o___peripheral___pin.html#gaa2b5869babddcfb03d50e289c5005bd9',1,'xgpio.h']]],
+  ['spi0mosi',['SPI0MOSI',['../group__x_g_p_i_o___peripheral___pin.html#ga100aadef15f36ebcfddd13b21418f8fa',1,'xgpio.h']]],
+  ['spi1clk',['SPI1CLK',['../group__x_g_p_i_o___peripheral___pin.html#ga346cd3f945a27333eea56dff28a097ba',1,'xgpio.h']]],
+  ['spi1cs',['SPI1CS',['../group__x_g_p_i_o___peripheral___pin.html#ga5e019f47b089c1491edf762f186215e5',1,'xgpio.h']]],
+  ['spi1miso',['SPI1MISO',['../group__x_g_p_i_o___peripheral___pin.html#ga177f4df8aa2785a269f82b44c4643170',1,'xgpio.h']]],
+  ['spi1mosi',['SPI1MOSI',['../group__x_g_p_i_o___peripheral___pin.html#ga5d1530622287c22febfc26fd367f2e02',1,'xgpio.h']]],
+  ['spi2clk',['SPI2CLK',['../group__x_g_p_i_o___peripheral___pin.html#ga07c06f1dec3826534d15b6a0f7e343e9',1,'xgpio.h']]],
+  ['spi2cs',['SPI2CS',['../group__x_g_p_i_o___peripheral___pin.html#ga55c3797a3e6bbc98218dd35b84060eb8',1,'xgpio.h']]],
+  ['spi2miso',['SPI2MISO',['../group__x_g_p_i_o___peripheral___pin.html#ga42f9b0a7840ec90515be8dea219333d2',1,'xgpio.h']]],
+  ['spi2mosi',['SPI2MOSI',['../group__x_g_p_i_o___peripheral___pin.html#gabd2d5c713e83d315c977b05afbb7800c',1,'xgpio.h']]],
+  ['spi3clk',['SPI3CLK',['../group__x_g_p_i_o___peripheral___pin.html#ga54f479cc6d215fd5d9544748a7b2e9dd',1,'xgpio.h']]],
+  ['spi3cs',['SPI3CS',['../group__x_g_p_i_o___peripheral___pin.html#ga3a95609595b4ec544488ccc77a71789b',1,'xgpio.h']]],
+  ['spi3miso',['SPI3MISO',['../group__x_g_p_i_o___peripheral___pin.html#ga7af78fffc2b4376d0bd75575022c981f',1,'xgpio.h']]],
+  ['spi3mosi',['SPI3MOSI',['../group__x_g_p_i_o___peripheral___pin.html#ga29ba5c24a8c7c5ea77ada07cb7ed567b',1,'xgpio.h']]],
+  ['stack_5fsize',['STACK_SIZE',['../startup__coide_8c.html#a6423a880df59733d2d9b509c7718d3a9',1,'startup_coide.c']]],
+  ['startup_5fcoide_2ec',['startup_coide.c',['../startup__coide_8c.html',1,'']]]
+];
