@@ -7,12 +7,12 @@
 
 var indexSectionsWithContent =
 {
-  0: "_acdefgilpstuwx",
-  1: "cgsx",
+  0: "_acdefgilmpstuwx",
+  1: "cgmsx",
   2: "_degx",
   3: "glsw",
   4: "cglx",
-  5: "tx"
+  5: "ctx"
 };
 
 var indexSectionNames =

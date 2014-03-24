@@ -1,16 +1,34 @@
-﻿xGPIO document
+﻿\page xGPIO_page xGPIO page 
+
+[TOC]
+
+
+
+
+xGPIO document
 ======
+本篇文章主要讲解，CoX.GPIO的规范，包括：
+- 宏参数
+    - 参数的意义？
+    - 传给哪个API？
+    - 参数的形式
+    - 各个厂商系列的实现情况
+- API函数
+    - 函数原型
+    - 需要实现的功能和每个参数的意义
+    - 函数之间的组合应用（功能）
+ 
 
 xGPIO interrupt number config   {#xGPIO_Config_md}
 ================
 
-aaaa
------------
-这个宏是提供给用户的，用户根据自己使用的GPIO中断情况来配置这个宏。
-在CoX规范中，它是强制的，其形式 就是一个固定的宏名称：\ref xGPIO_INT_NUMBER
+- 这个宏是提供给用户的，用户根据自己使用的GPIO中断情况来配置这个宏，默认值是8，表示可以用8个GPIO可以使用中断，具体会对应8个回调函数。
+- 这个宏不是API的参数
+- 在CoX规范中，它是强制的，其形式 就是一个固定的宏名称：\ref xGPIO_INT_NUMBER
+- 所有的系列都需要提供这个配置宏。
 
 |xGPIO General Pin ID    |       CoX      |     all series         |
-|-----------------------:|:--------------:|:-----------------------|
+|:----------------------:|:--------------:|:----------------------:|
 |xGPIO_INT_NUMBER        |    Mandatory   |  xGPIO_INT_NUMBER      |
 
 
@@ -18,8 +36,23 @@ aaaa
 xGPIO General Pin ID           {#xGPIO_General_Pin_IDs_md}
 ===========================
 
-这组宏定义在CoX中是强制的，在每个系列中都必须实现这样一组宏。其强制的形式为xGPIO_PIN_n。
-对于每个系列这个n的大小可以不同。
+- 这个参数一个GPIO port对应的pin的位域编码，使用位域编码的好处：
+    - 与寄存器实际的位域一一对应
+    - 可以使用 | 操作 一次性操作 多个位域。
+- 这组宏定义在CoX中是强制的，在每个系列中都必须实现这样一组宏。其强制的形式为xGPIO_PIN_n。
+- 使用了这个宏的API
+    -  \ref xGPIODirModeSet <br>
+    -  \ref xGPIODirModeGet <br>
+    -  \ref xGPIOPinIntCallbackInit <br>
+    -  \ref xGPIOPinIntEnable <br>
+    -  \ref xGPIOPinIntDisable <br>
+    -  \ref xGPIOPinIntClear <br>
+    -  \ref xGPIOPinRead <br>
+    -  \ref xGPIOPinWrite <br>
+    -  \ref xGPIOPadConfigSet <br>
+    -  \ref xGPIOPadConfigSet <br>
+- 对于每个系列这个n的大小可以不同。一般n可以是8，16，32.
+
 CoX 支持了以下的系列，这个参数在各个系列的实现情况如下表所示：
 
 表格一
@@ -34,33 +67,18 @@ CoX 支持了以下的系列，这个参数在各个系列的实现情况如下�
 |  xGPIO_PIN_n             | **xGPIO_PIN_31** | **xGPIO_PIN_15** | **xGPIO_PIN_15** | **xGPIO_PIN_7**  | **xGPIO_PIN_31** | **xGPIO_PIN_15** |
 
 
-表格二
-----------
-
-|xGPIO General Pin ID | xGPIO_PIN_n|
-|:------:|:------:|
-|LPC17xx| xGPIO_PIN_0<br>...<br> **xGPIO_PIN_31** |
-|STM32F1xx|xGPIO_PIN_0<br>...<br> **xGPIO_PIN_15** |
-|NUVOTON|xGPIO_PIN_0<br>...<br> **xGPIO_PIN_15** |
-|Freescale|xGPIO_PIN_0<br>...<br> **xGPIO_PIN_31** |
-|Holtek|xGPIO_PIN_0<br>...<br> **xGPIO_PIN_15** |
-
-表格三
-------------
-
-|xGPIO General Pin ID | xGPIO_PIN_0|....|xGPIO_PIN_n|
-|:------:|:------:|:------:|:------:|
-|LPC17xx| xGPIO_PIN_0|...| **xGPIO_PIN_31** |
-|STM32F1xx|xGPIO_PIN_0|...| **xGPIO_PIN_15** |
-|NUVOTON|xGPIO_PIN_0|...| **xGPIO_PIN_15** |
-|Freescale|xGPIO_PIN_0|...| **xGPIO_PIN_31** |
-|Holtek|xGPIO_PIN_0|...| **xGPIO_PIN_15** |
-
 xGPIO Dir Mode  {#xGPIO_Dir_Mode_md}
 ========
 
-这组宏用来表示 GPIO方向的模式，CoX抽出了以下5种：输入、输出、准双端、开漏输出、作为外设管脚
-不一定所有的芯片都具备这5种功能，以下表格列举了五种模式在各个系列的实现情况：
+- 这组宏用来表示 GPIO方向的模式，CoX抽出了以下5种：输入、输出、准双端、开漏输出、作为外设管脚
+- 这组宏作为 xGPIODirModeSet() 的ulPinIO参数传入，或者是 xGPIODirModeGet()的返回值。
+- 其形式为固定的名称 :
+    - \ref xGPIO_DIR_MODE_IN
+    - \ref xGPIO_DIR_MODE_OUT
+    - \ref xGPIO_DIR_MODE_HW
+    - \ref xGPIO_DIR_MODE_QB
+    - \ref xGPIO_DIR_MODE_OD
+- 不一定所有的芯片都具备这5种功能，以下表格列举了五种模式在各个系列的实现情况：
 
 |  xGPIO Dir Mode       | LPC17xx|STM32F1xx|M051 |Mini51 |NUC1xx |NUC122 |NUC123 |NUC2xx |KLx    |HT32F125x| HT32F175x| 
 |:---------------------:|:------:|:-------:|:---:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-------:|:--------:|
@@ -74,25 +92,34 @@ xGPIO Dir Mode  {#xGPIO_Dir_Mode_md}
 
 xGPIO Int Type  {#xGPIO_Int_Type_md}
 ===========
-这里定义的是GPIO支持的一些中断类型，包括上升沿 、下降沿、高电平、低电平 和 双边沿双电平。
-一般MCU都会有 上升沿和下降沿。一些MCU
+- 这里定义的是GPIO支持的一些中断类型，包括:
+    - 上升沿 \ref xGPIO_RISING_EDGE
+    - 下降沿 \ref xGPIO_FALLING_EDGE
+    - 高电平 \ref xGPIO_HIGH_LEVEL
+    - 低电平 \ref xGPIO_LOW_LEVEL
+    - 双边沿 \ref xGPIO_BOTH_EDGES
+    - 双电平 \ref xGPIO_BOTH_LEVEL
+- 这组宏作为 xGPIOPinIntEnable() 的ulIntType参数传入。
+- MCU都会有 上升沿和下降沿。一些MCU还支持电平触发。
 
-|  xGPIO Int Type       | LPC17xx |STM32F1xx|M051 |Mini51 |NUC1xx |NUC122 |NUC123 |NUC2xx |KLx    |HT32F125x| HT32F175x| LM3S     |
-|-----------------------|---------|:-------:|:---:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-------:|:--------:|:--------:|
-|  xGPIO_FALLING_EDGE   |  **Y**  |  **Y**  |**Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
-|  xGPIO_RISING_EDGE    |  **Y**  |  **Y**  |**Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
-|  xGPIO_LOW_LEVEL      |   *N*   |   *N*   |**Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
-|  xGPIO_HIGH_LEVEL     |   *N*   |   *N*   |**Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
-|  xGPIO_BOTH_LEVEL     |   *N*   |   *N*   |**Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|   *N* |   *N*   |   *N*    |   *N*    |
-|  xGPIO_BOTH_EDGES     |  **Y**  |  **Y**  |**Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  xGPIO Int Type       | LPC17xx |STM32F1xx| M051 |Mini51 |NUC1xx |NUC122 |NUC123 |NUC2xx |KLx    |HT32F125x| HT32F175x| LM3S     |
+|-----------------------|---------|:-------:|: ---:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-------:|:--------:|:--------:|
+|  xGPIO_FALLING_EDGE   |  **Y**  |  **Y**  | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  xGPIO_RISING_EDGE    |  **Y**  |  **Y**  | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  xGPIO_LOW_LEVEL      |   *N*   |   *N*   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  xGPIO_HIGH_LEVEL     |   *N*   |   *N*   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  xGPIO_BOTH_LEVEL     |   *N*   |   *N*   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|   *N* |   *N*   |   *N*    |   *N*    |
+|  xGPIO_BOTH_EDGES     |  **Y**  |  **Y**  | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
 
 
 
 
 xGPIO Pad Config Strength {#xGPIO_Pad_Config_Strength_md}
 =============
-这组宏定义是定义 管脚的驱动能力，是个非强制性的参数（其对应的函数也是非强制性的），其宏的形式 是 xGPIO_STRENGTH_nMA，
-其中nMA表示 具体的驱动能力，芯片不同 n 也会不同，比如：TI 的LM3S系列 n = 2，4，8。当然很多芯片没有这个功能，比如ST NXP的芯片。
+- 这组宏定义是定义 管脚的驱动能力，是个非强制性的参数（其对应的函数也是非强制性的） 
+- 这组宏作为 xxx() 的 xx 参数传入。
+- 其宏的形式 是 xGPIO_STRENGTH_nMA，其中nMA表示 具体的驱动能力，芯片不同 n 也会不同，比如：TI 的LM3S系列 n = 2，4，8。
+- 当然很多芯片没有这个功能，比如ST NXP的芯片。
 详见下表：
 |  xGPIO Pad Strength   | LPC17xx|STM32F1xx|M051/Mini51/NUC1xx/NUC122/NUC123/NUC2xx|KLx   |HT32F125x/HT32F175x|LM3S  |
 |-----------------------|:------:|:------:|:--------------------------------------:|:----:|:-----------------:|:----:|
@@ -107,18 +134,35 @@ Short Pin 是为了让用户更加方便的使用GPIO而引入的，比如 PA5�
 （有些厂商用0，1，2...表示port） 的5号管脚。Short Pin 适合单个管脚的应用场合。对于需要多个引脚并行操作的，
 不适合使用Short Pin 
 
-我们提供了一系列的Short Pin 的API"函数"(其实是一些函数宏)，
-- \ref xGPIOSPinDirModeSet()
-- xGPIOSPinIntCallbackInit()
-- xGPIOSPinIntEnable()
-- xGPIOSPinIntDisable()
-- xGPIOSPinIntClear()
-- xGPIOSPinRead()
-- xGPIOSPinWrite()
-- xGPIOSPinTypeGPIOInput()
-- xGPIOSPinTypeGPIOOutput()
-- xGPIOSPinTypeGPIOOutputOD()
-
+我们提供了一系列的Short Pin 的API"函数"(其实是一些函数宏)，这些宏分三类：
+- 一类是作为GPIO的功能
+    - xGPIOSPinDirModeSet()
+    - xGPIOSPinIntCallbackInit()
+    - xGPIOSPinIntEnable()
+    - xGPIOSPinIntDisable()
+    - xGPIOSPinIntClear()
+    - xGPIOSPinRead()
+    - xGPIOSPinWrite()
+    - xGPIOSPinTypeGPIOInput()
+    - xGPIOSPinTypeGPIOOutput()
+    - xGPIOSPinTypeGPIOOutputOD()
+- 另一类是设置引脚的外设功能
+    - xSPinTypeADC()
+    - xSPinTypeCAN()
+    - xSPinTypeI2C()
+    - xSPinTypePWM()
+    - xSPinTypeSPI()
+    - xSPinTypeTimer()
+    - xSPinTypeUART()
+    - xSPinTypeDAC()
+    - xSPinTypeACMP()
+    - xSPinTypeI2S()
+- 最后一类是将Spin转化成API函数的参数
+    - xGPIOSPinToPeripheralId()
+    - xGPIOSPinToPort()
+    - xGPIOSPinToPortPin()
+    - xGPIOSPinToPin()
+ 
 将PA0设置为输出，直接 xGPIOSPinTypeGPIOOutput(PA0)就行了,将PA0置1，xGPIOSPinWrite(PA0,1),清零则是 xGPIOSPinWrite(PA0,0)。
 Short Pin的好处是可以直接传入 PA0这个字符串，而毋庸关心。PA0的寄存器地址或者port A的结构体变量等。
 
@@ -140,12 +184,29 @@ Short Pin的好处是可以直接传入 PA0这个字符串，而毋庸关心。P
 
 General Peripheral Pin            {#xGPIO_Peripheral_Pin_md} 
 ======
-CoX 为了让用户更加方便的使用 GPIO的外设功能，特定义了一组SPin to Peripheral的功能。
-比如：xSPinTypeADC(),xSPinTypeCAN(),xSPinTypeI2C()等。
+- CoX 为了让用户更加方便的使用 GPIO的外设功能，特定义了一组SPin to Peripheral的功能。比如：
+    - xSPinTypeADC()
+    - xSPinTypeCAN()
+    - xSPinTypeI2C()
+    - xSPinTypePWM()
+    - xSPinTypeSPI()
+    - xSPinTypeTimer()
+    - xSPinTypeUART()
+    - xSPinTypeDAC()
+    - xSPinTypeACMP()
+    - xSPinTypeI2S()
+    
 这些函数的特点是一次值配置一个管脚，其中一个参数就是 上面的Short Pin，另外一个参数就是
 这里要介绍的 外设管脚名称（General Peripheral Pin），比如：ADC0 I2C0SCK SPI0CS等。
 比如 xSPinTypeADC(ADC0,PA0) 就是将PA0设置为 ADC 通道 0 的输入引脚。
-下面 我们列举 CoX定义的一些外设管脚名称。
+
+- 这些外设引脚名称的形式是：外设名引脚名+编号
+    - ADC0 ADC1 ... ADC7
+    - I2C0SCK I2C1SCK I2C2SCK
+    - UART0RX UART1RX UART2RX UART3RX
+    - ...
+    
+- 下面 我们列举 CoX定义的一些外设管脚名称。
 
 | General Peripheral Pin  |          LPC17xx                |
 |-------------------------|---------------------------------|
@@ -167,9 +228,63 @@ CoX 为了让用户更加方便的使用 GPIO的外设功能，特定义了一�
 | DACOUTn                 | DACOUT0                         |
 | CANnRX                  | CAN0RX  CAN1RX                  |
 | CANnTX                  | CAN0TX  CAN1TX                  |
+|I2SnRXSCK                | I2S0RXSCK                       |
+|I2SnRXMCLK               | I2S0RXMCLK                      |
+|I2SnRXSD                 | I2S0RXSD                        |
+|I2SnRXWS                 | I2S0RXWS                        |
+|I2SnTXSCK                | I2S0TXSCK                       |
+|I2SnTXMCLK               | I2S0TXMCLK                      |
+|I2SnTXSD                 | I2S0TXSD                        |
+|I2SnTXWS                 | I2S0TXWS                        |
 
 \note 关于 timer的引脚，由于不同系列的timer相差太大：有的有输入而有的没有，有的有几组输出，有的输入输出公用一个引脚，
 有的是单独分开的。所以，我们只定义了timer的输出引脚标准。
 
 
+xGPIO API              {#xGPIO_Exported_APIs_md}
+==========
 
+
+|       xGPIO API                 |LPC17xx  |
+|:--------------------------------|:-------:|
+|  \ref xGPIODirModeSet           | **Y**   |
+|  \ref xGPIOSPinToPeripheralId   | **Y**   |
+|  \ref xGPIOSPinToPort           | **Y**   |
+|  \ref xGPIOSPinToPin            | **Y**   |
+|  \ref xGPIOSPinDirModeSet       | **Y**   |
+|  \ref xGPIODirModeGet           | **Y**   |
+|  \ref xGPIOPinIntCallbackInit   | **Y**   |
+|  \ref xGPIOPinIntEnable         | **Y**   |
+|  \ref xGPIOSPinIntEnable        | **Y**   |
+|  \ref xGPIOPinIntDisable        | **Y**   |
+|  \ref xGPIOSPinIntDisable       | **Y**   |
+|  \ref xGPIOPinIntStatus         | **Y**   |
+|  \ref xGPIOPinIntClear          | **Y**   |
+|  \ref xGPIOSPinIntClear         | **Y**   |
+|  \ref xGPIOPinRead              | **Y**   |
+|  \ref xGPIOSPinRead             | **Y**   |
+|  \ref xGPIOPinWrite             | **Y**   |
+|  \ref xGPIOSPinWrite            | **Y**   |
+|  \ref xGPIOPinConfigure         | **Y**   |
+|  \ref xGPIOSPinTypeGPIOInput    | **Y**   |
+|  \ref xGPIOSPinTypeGPIOOutput   | **Y**   |
+|  \ref xGPIOSPinTypeGPIOOutputOD | **Y**   |
+|  \ref xGPIOSPinTypeGPIOOutputQB | **Y**   |
+|  \ref xSPinTypeADC              | **Y**   |
+|  \ref xSPinTypeDAC              | **Y**   |
+|  \ref xSPinTypeCAN              | **Y**   |
+|  \ref xSPinTypeI2C              | **Y**   |
+|  \ref xSPinTypePWM              | **Y**   |
+|  \ref xSPinTypeSPI              | **Y**   |
+|  \ref xSPinTypeTimer            | **Y**   |
+|  \ref xSPinTypeUART             | **Y**   |
+|  \ref xSPinTypeACMP             |  *N*    |
+
+
+API 分组
+----------
+占位
+
+API 组合使用例子
+------
+占位

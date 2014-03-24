@@ -12,5 +12,6 @@ var searchData=
   ['cmp1p',['CMP1P',['../group__x_g_p_i_o___peripheral___pin.html#ga11dee695c2060bc2b103f97ea51ddf95',1,'xgpio.h']]],
   ['cox_5fbase_2eh',['CoX_base.h',['../_co_x__base_8h.html',1,'']]],
   ['cox_5fperipheral_5finterface',['CoX_Peripheral_Interface',['../group___co_x___peripheral___interface.html',1,'']]],
-  ['cox_5fperipheral_5flib',['CoX_Peripheral_Lib',['../group___co_x___peripheral___lib.html',1,'']]]
+  ['cox_5fperipheral_5flib',['CoX_Peripheral_Lib',['../group___co_x___peripheral___lib.html',1,'']]],
+  ['coocox_2fcox',['CooCox/CoX',['../index.html',1,'']]]
 ];
