@@ -50,7 +50,7 @@ xGPIO General Pin ID           {#xGPIO_General_Pin_IDs_md}
     -  \ref xGPIOPinRead <br>
     -  \ref xGPIOPinWrite <br>
     -  \ref xGPIOPadConfigSet <br>
-    -  \ref xGPIOPadConfigGet <br>
+    -  \ref xGPIOPadConfiget <br>
 - 对于每个系列这个n的大小可以不同。一般n可以是8，16，32.
 
 CoX 支持了以下的系列，这个参数在各个系列的实现情况如下表所示：
@@ -245,40 +245,41 @@ xGPIO API              {#xGPIO_Exported_APIs_md}
 ==========
 
 
-|       xGPIO API                 |LPC17xx  |
-|:--------------------------------|:-------:|
-|  \ref xGPIODirModeSet           | **Y**   |
-|  \ref xGPIOSPinToPeripheralId   | **Y**   |
-|  \ref xGPIOSPinToPort           | **Y**   |
-|  \ref xGPIOSPinToPin            | **Y**   |
-|  \ref xGPIOSPinDirModeSet       | **Y**   |
-|  \ref xGPIODirModeGet           | **Y**   |
-|  \ref xGPIOPinIntCallbackInit   | **Y**   |
-|  \ref xGPIOPinIntEnable         | **Y**   |
-|  \ref xGPIOSPinIntEnable        | **Y**   |
-|  \ref xGPIOPinIntDisable        | **Y**   |
-|  \ref xGPIOSPinIntDisable       | **Y**   |
-|  \ref xGPIOPinIntStatus         | **Y**   |
-|  \ref xGPIOPinIntClear          | **Y**   |
-|  \ref xGPIOSPinIntClear         | **Y**   |
-|  \ref xGPIOPinRead              | **Y**   |
-|  \ref xGPIOSPinRead             | **Y**   |
-|  \ref xGPIOPinWrite             | **Y**   |
-|  \ref xGPIOSPinWrite            | **Y**   |
-|  \ref xGPIOPinConfigure         | **Y**   |
-|  \ref xGPIOSPinTypeGPIOInput    | **Y**   |
-|  \ref xGPIOSPinTypeGPIOOutput   | **Y**   |
-|  \ref xGPIOSPinTypeGPIOOutputOD | **Y**   |
-|  \ref xGPIOSPinTypeGPIOOutputQB | **Y**   |
-|  \ref xSPinTypeADC              | **Y**   |
-|  \ref xSPinTypeDAC              | **Y**   |
-|  \ref xSPinTypeCAN              | **Y**   |
-|  \ref xSPinTypeI2C              | **Y**   |
-|  \ref xSPinTypePWM              | **Y**   |
-|  \ref xSPinTypeSPI              | **Y**   |
-|  \ref xSPinTypeTimer            | **Y**   |
-|  \ref xSPinTypeUART             | **Y**   |
-|  \ref xSPinTypeACMP             |  *N*    |
+|       xGPIO API                 |LPC17xx  |STM32F1xx| M051 |Mini51 |NUC1xx |NUC122 |NUC123 |NUC2xx |KLx    |HT32F125x| HT32F175x| LM3S     |
+|:--------------------------------|:-------:|:-------:|: ---:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-------:|:--------:|:--------:|
+|  \ref xGPIODirModeSet           | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinToPeripheralId   | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinToPort           | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinToPin            | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinDirModeSet       | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIODirModeGet           | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOPinIntCallbackInit   | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOPinIntEnable         | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinIntEnable        | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOPinIntDisable        | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinIntDisable       | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOPinIntStatus         | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOPinIntClear          | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinIntClear         | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOPinRead              | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinRead             | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOPinWrite             | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinWrite            | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOPinConfigure         | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinTypeGPIOInput    | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinTypeGPIOOutput   | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinTypeGPIOOutputOD | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xGPIOSPinTypeGPIOOutputQB | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeADC              | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeDAC              | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeCAN              | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeI2C              | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypePWM              | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeSPI              | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeTimer            | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeUART             | **Y**   | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeACMP             |  *N*    | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
+|  \ref xSPinTypeI2S              |  *N*    | **Y**   | **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**|  **Y**  |  **Y**   |  **Y**   |
 
 
 API 分组
