@@ -19,7 +19,7 @@ What's CoX ?
 CoX develop manual 
 ----
   - \ref xLowlayer_page
-  - \ref xSysCtl_page
+  - \ref xSysctl_page
   - \ref xGPIO_page
   - \ref xI2C_page
   - \ref xUART_page
