@@ -50,7 +50,7 @@ xGPIO General Pin ID           {#xGPIO_General_Pin_IDs_md}
     -  \ref xGPIOPinRead <br>
     -  \ref xGPIOPinWrite <br>
     -  \ref xGPIOPadConfigSet <br>
-    -  \ref xGPIOPadConfigSet <br>
+    -  \ref xGPIOPadConfigGet <br>
 - 对于每个系列这个n的大小可以不同。一般n可以是8，16，32.
 
 CoX 支持了以下的系列，这个参数在各个系列的实现情况如下表所示：

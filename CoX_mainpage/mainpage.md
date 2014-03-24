@@ -17,6 +17,7 @@ What's CoX ?
  .
 
 CoX develop manual 
+----
   - \ref xSysCtl_page
   - \ref xGPIO_page
   - \ref xI2C_page

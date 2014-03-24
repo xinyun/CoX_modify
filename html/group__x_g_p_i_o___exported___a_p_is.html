@@ -72,6 +72,15 @@ Macros</h2></td></tr>
 <tr class="memitem:ga3d6fec226dfe8507030b6cf069d5f008"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga3d6fec226dfe8507030b6cf069d5f008">xGPIOSPinDirModeSet</a>(eShortPin, ulPinIO)&#160;&#160;&#160;<a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga8e3d4c0ca9fa39734e7d8844d366c466">xGPIODirModeSet</a>(G##eShortPin, ulPinIO)</td></tr>
 <tr class="memdesc:ga3d6fec226dfe8507030b6cf069d5f008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the direction and mode of the specified pin(s). This function will set the specified pin(s) on the selected GPIO port as either an input or output under software control, or it will set the pin to be under hardware control.  <a href="#ga3d6fec226dfe8507030b6cf069d5f008">More...</a><br/></td></tr>
 <tr class="separator:ga3d6fec226dfe8507030b6cf069d5f008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdb21ec64802023eba84336596b877ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gabdb21ec64802023eba84336596b877ec">xGPIOPadConfigSet</a>(ulPort, ulPins, ulStrength, ulPadType)&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gabdb21ec64802023eba84336596b877ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pad configuration for the specified pin(s).  <a href="#gabdb21ec64802023eba84336596b877ec">More...</a><br/></td></tr>
+<tr class="separator:gabdb21ec64802023eba84336596b877ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7c4db04faddec28cfc28df5eef49f11"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gae7c4db04faddec28cfc28df5eef49f11">xGPIOPadConfigGet</a>(ulPort, ulPin, pulStrength, pulPadType)&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gae7c4db04faddec28cfc28df5eef49f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pad configuration for a pin.  <a href="#gae7c4db04faddec28cfc28df5eef49f11">More...</a><br/></td></tr>
+<tr class="separator:gae7c4db04faddec28cfc28df5eef49f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga451aa8d38ad0faf776fff667a0e2f68c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga451aa8d38ad0faf776fff667a0e2f68c">xGPIOSPinIntCallbackInit</a>(eShortPin, xtPortCallback)&#160;&#160;&#160;<a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gaf6c66246543589038c823b94b4fdafea">xGPIOPinIntCallbackInit</a>(G##eShortPin, xtPortCallback)</td></tr>
+<tr class="memdesc:ga451aa8d38ad0faf776fff667a0e2f68c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register user's gpio interrupt function..  <a href="#ga451aa8d38ad0faf776fff667a0e2f68c">More...</a><br/></td></tr>
+<tr class="separator:ga451aa8d38ad0faf776fff667a0e2f68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1a6783378ee16f8c4ce5517be5430011"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga1a6783378ee16f8c4ce5517be5430011">xGPIOSPinIntEnable</a>(eShortPin, ulIntType)&#160;&#160;&#160;<a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga5a4426bcac8cbaa7e75814c277537c94">xGPIOPinIntEnable</a>(G##eShortPin, ulIntType)</td></tr>
 <tr class="memdesc:ga1a6783378ee16f8c4ce5517be5430011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the interrupt type and Enable interrupt for the specified pin(s).  <a href="#ga1a6783378ee16f8c4ce5517be5430011">More...</a><br/></td></tr>
 <tr class="separator:ga1a6783378ee16f8c4ce5517be5430011"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,6 +117,8 @@ Macros</h2></td></tr>
 <tr class="memitem:ga92aa9a53a112b0e2a02866bcfbcdee8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga92aa9a53a112b0e2a02866bcfbcdee8a">xGPIOSPinTypeGPIOOutputOD</a>(eShortPin)</td></tr>
 <tr class="memdesc:ga92aa9a53a112b0e2a02866bcfbcdee8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn a pin to a GPIO Output(open drain) pin. This function configures a pin for use as an GPIO Output pin device and turns the pin into a GPIO Output(open drain) pin.  <a href="#ga92aa9a53a112b0e2a02866bcfbcdee8a">More...</a><br/></td></tr>
 <tr class="separator:ga92aa9a53a112b0e2a02866bcfbcdee8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga739f0e89c1babdf63c9414d7efe3cbec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga739f0e89c1babdf63c9414d7efe3cbec">xGPIOSPinTypeGPIOOutputQB</a>(eShortPin)</td></tr>
+<tr class="separator:ga739f0e89c1babdf63c9414d7efe3cbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5c0278f15319393bc656b54079135fd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga5c0278f15319393bc656b54079135fd5">xSPinTypeADC</a>(ePeripheralPin, eShortPin)&#160;&#160;&#160;<a class="el" href="_co_x__base_8h.html#a00b2a906d5d6977c7d20e156c52e691f">GPIOSPinConfigure</a>(ePeripheralPin, eShortPin)</td></tr>
 <tr class="memdesc:ga5c0278f15319393bc656b54079135fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn a pin to a GPIO ADC input pin. This function configures a pin for use as an ADC function device and turns the pin into a GPIO ADC input pin.  <a href="#ga5c0278f15319393bc656b54079135fd5">More...</a><br/></td></tr>
 <tr class="separator:ga5c0278f15319393bc656b54079135fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +143,10 @@ Macros</h2></td></tr>
 <tr class="memitem:gabb887df9ba656f9cdbf3327a9c89a254"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gabb887df9ba656f9cdbf3327a9c89a254">xSPinTypeDAC</a>(ePeripheralPin, eShortPin)&#160;&#160;&#160;<a class="el" href="_co_x__base_8h.html#a00b2a906d5d6977c7d20e156c52e691f">GPIOSPinConfigure</a>(ePeripheralPin, eShortPin)</td></tr>
 <tr class="memdesc:gabb887df9ba656f9cdbf3327a9c89a254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn a pin to a GPIO DAC output pin. This function configures a pin for use as an GPIO DAC function and turns the pin into a GPIO DAC output pin.  <a href="#gabb887df9ba656f9cdbf3327a9c89a254">More...</a><br/></td></tr>
 <tr class="separator:gabb887df9ba656f9cdbf3327a9c89a254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5dcc6ac16b3418a5ba424315c132faa8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga5dcc6ac16b3418a5ba424315c132faa8">xSPinTypeACMP</a>(ePeripheralPin, eShortPin)&#160;&#160;&#160;<a class="el" href="_co_x__base_8h.html#a00b2a906d5d6977c7d20e156c52e691f">GPIOSPinConfigure</a>(ePeripheralPin, eShortPin)</td></tr>
+<tr class="separator:ga5dcc6ac16b3418a5ba424315c132faa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a117d0c881785795f1a4bc2ec3c822e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga2a117d0c881785795f1a4bc2ec3c822e">xSPinTypeI2S</a>(ePeripheralPin, eShortPin)&#160;&#160;&#160;<a class="el" href="_co_x__base_8h.html#a00b2a906d5d6977c7d20e156c52e691f">GPIOSPinConfigure</a>(ePeripheralPin, eShortPin)</td></tr>
+<tr class="separator:ga2a117d0c881785795f1a4bc2ec3c822e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -212,7 +227,7 @@ CoX Port Details</h1>
 <tr>
 <td><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga92aa9a53a112b0e2a02866bcfbcdee8a">xGPIOSPinTypeGPIOOutputOD</a> </td><td>Non-Mandatory </td><td>Y </td></tr>
 <tr>
-<td>xGPIOSPinTypeGPIOOutputQB </td><td>Non-Mandatory </td><td>Y </td></tr>
+<td><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga739f0e89c1babdf63c9414d7efe3cbec">xGPIOSPinTypeGPIOOutputQB</a> </td><td>Non-Mandatory </td><td>Y </td></tr>
 <tr>
 <td><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga5c0278f15319393bc656b54079135fd5">xSPinTypeADC</a> </td><td>Mandatory </td><td>Y </td></tr>
 <tr>
@@ -230,9 +245,136 @@ CoX Port Details</h1>
 <tr>
 <td><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gab5609e8ec803212500e8905f364d3765">xSPinTypeUART</a> </td><td>Mandatory </td><td>Y </td></tr>
 <tr>
-<td>xSPinTypeACMP </td><td>Mandatory </td><td>N </td></tr>
+<td><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga5dcc6ac16b3418a5ba424315c132faa8">xSPinTypeACMP</a> </td><td>Mandatory </td><td>N </td></tr>
+<tr>
+<td><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#ga2a117d0c881785795f1a4bc2ec3c822e">xSPinTypeI2S</a> </td><td>Mandatory </td><td>N </td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="gae7c4db04faddec28cfc28df5eef49f11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define xGPIOPadConfigGet</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ulPort, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ulPin, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pulStrength, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pulPadType&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the pad configuration for a pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ulPort</td><td>is the base address of the GPIO port. </td></tr>
+    <tr><td class="paramname">ucPin</td><td>is the pin number. </td></tr>
+    <tr><td class="paramname">pulStrength</td><td>is a pointer to storage for the output drive strength. </td></tr>
+    <tr><td class="paramname">pulPinType</td><td>is a pointer to storage for the output drive type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function gets the pad configuration for a specified pin on the selected GPIO port. The values returned in <em>pulStrength</em> and <em>pulPinType</em> correspond to the values used in <a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gabdb21ec64802023eba84336596b877ec" title="Sets the pad configuration for the specified pin(s). ">xGPIOPadConfigSet()</a>. This function also works for pin(s) configured as input pin(s); however, the only meaningful data returned is whether the pin is terminated with a pull-up or down resistor.</p>
+<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
+
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01232">1232</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabdb21ec64802023eba84336596b877ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define xGPIOPadConfigSet</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ulPort, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ulPins, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ulStrength, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ulPadType&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the pad configuration for the specified pin(s). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ulPort</td><td>is the base address of the GPIO port. </td></tr>
+    <tr><td class="paramname">ucPins</td><td>is the bit-packed representation of the pin(s). </td></tr>
+    <tr><td class="paramname">ulStrength</td><td>specifies the output drive strength. </td></tr>
+    <tr><td class="paramname">ulPinType</td><td>specifies the pin type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function sets the drive strength and type for the specified pin(s) on the selected GPIO port. For pin(s) configured as input ports, the pad is configured as requested, but the only real effect on the input is the configuration of the pull-up or pull-down termination.</p>
+<p>The parameter <em>ulStrength</em> can be one of the following values:</p>
+<ul>
+<li><b>xGPIO_STRENGTH_2MA</b> </li>
+<li><b>xGPIO_STRENGTH_4MA</b> </li>
+<li><b>xGPIO_STRENGTH_8MA</b> </li>
+</ul>
+<p>where <b>xGPIO_STRENGTH_xMA</b> specifies either 2, 4, or 8 mA output drive strength, and <b>xGPIO_OUT_STRENGTH_8MA_SC</b> specifies 8 mA output drive with slew control.</p>
+<p>The parameter <em>ulPinType</em> can be one of the following values:</p>
+<ul>
+<li><b>xGPIO_PIN_TYPE_STD</b> </li>
+<li><b>xGPIO_PIN_TYPE_STD_WPU</b> </li>
+<li><b>xGPIO_PIN_TYPE_STD_WPD</b> </li>
+<li><b>xGPIO_PIN_TYPE_OD</b> </li>
+<li><b>xGPIO_PIN_TYPE_OD_WPU</b> </li>
+<li><b>xGPIO_PIN_TYPE_OD_WPD</b> </li>
+<li><b>xGPIO_PIN_TYPE_ANALOG</b> </li>
+</ul>
+<p>where <b>xGPIO_PIN_TYPE_STD*</b> specifies a push-pull pin, <b>xGPIO_PIN_TYPE_OD*</b> specifies an open-drain pin, <b>*_WPU</b> specifies a weak pull-up, <b>*_WPD</b> specifies a weak pull-down, and <b>xGPIO_PIN_TYPE_ANALOG</b> specifies an analog input (for the comparators).</p>
+<p>The pin(s) are specified using a bit-packed byte, where each bit that is set identifies the pin to be accessed, and where bit 0 of the byte represents GPIO port pin 0, bit 1 represents GPIO port pin 1, and so on.</p>
+<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
+
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01210">1210</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="gae67a69c9dcc46ca02d24d75d11fcb19b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +409,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01307">1307</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01486">1486</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -294,7 +436,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a bit-packed byte, where each bit that is set identifie an active masked or raw interrupt, and where bit 0 of the byte represents GPIO port pin 0, bit 1 represents GPIO port pin 1, and so on. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01156">1156</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01335">1335</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -321,7 +463,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a bit-packed byte providing the state of the specified Port </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01227">1227</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01406">1406</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -359,7 +501,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01272">1272</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01451">1451</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -396,9 +538,47 @@ CoX Port Details</h1>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>xGPIOPadConfigSet() must also be used to configure the corresponding pad(s) in order for them to propagate the signal to/from the GPIO. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gabdb21ec64802023eba84336596b877ec">xGPIOPadConfigSet()</a> must also be used to configure the corresponding pad(s) in order for them to propagate the signal to/from the GPIO. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01046">1046</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01138">1138</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga451aa8d38ad0faf776fff667a0e2f68c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define xGPIOSPinIntCallbackInit</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">eShortPin, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">xtPortCallback&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gaf6c66246543589038c823b94b4fdafea">xGPIOPinIntCallbackInit</a>(G##eShortPin, xtPortCallback)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register user's gpio interrupt function.. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">eShortPin</td><td>Specified port and pin. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pfnCallback</td><td>pfnCallback is the callback function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
+
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01261">1261</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -426,7 +606,7 @@ CoX Port Details</h1>
 <dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Because there is a write buffer in the Cortex-M0 processor, it may take several clock cycles before the interrupt source is actually cleared. Therefore, it is recommended that the interrupt source be cleared early in the interrupt handler (as opposed to the very last action) to avoid returning from the interrupt handler before the interrupt source i actually cleared. Failure to do so may result in the interrupt handler being immediately reentered (because the interrupt controller still see the interrupt source asserted). </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01197">1197</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01376">1376</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -453,7 +633,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01141">1141</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01320">1320</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -492,7 +672,7 @@ CoX Port Details</h1>
 <dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>In order to avoid any spurious interrupts, the user must ensure that the GPIO inputs remain stable for the duration of this function. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01117">1117</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01296">1296</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -519,7 +699,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the value of specified port and pin. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01242">1242</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01421">1421</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -559,7 +739,7 @@ CoX Port Details</h1>
 <li>xSysCtlPeripheralReset </li>
 </ul>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l00982">982</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01074">1074</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -586,7 +766,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>GPIO pin number which is used by GPIO API. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01019">1019</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01111">1111</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -613,7 +793,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>GPIO port address which is used by GPIO API. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l00994">994</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01086">1086</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -640,7 +820,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>GPIO port address which is used by GPIO API. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01007">1007</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01099">1099</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -676,7 +856,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01321">1321</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01500">1500</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -712,7 +892,7 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01340">1340</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01519">1519</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -748,7 +928,31 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01359">1359</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01538">1538</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga739f0e89c1babdf63c9414d7efe3cbec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define xGPIOSPinTypeGPIOOutputQB</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">eShortPin</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span>                                                                    \</div>
+<div class="line">        {                                                                     <a class="code" href="group___l_p_c17xx___g_p_i_o___exported___a_p_is.html#gaf441be1cd05cf07173e2b5d36fa8a843">\</a></div>
+<div class="line"><a class="code" href="group___l_p_c17xx___g_p_i_o___exported___a_p_is.html#gaf441be1cd05cf07173e2b5d36fa8a843">            GPIOPinFunCfg</a>(G##eShortPin, GPIO_##eShortPin##_##eShortPin);      \</div>
+<div class="line">        }                                                                     \</div>
+<div class="line">        while(0)</div>
+<div class="ttc" id="group___l_p_c17xx___g_p_i_o___exported___a_p_is_html_gaf441be1cd05cf07173e2b5d36fa8a843"><div class="ttname"><a href="group___l_p_c17xx___g_p_i_o___exported___a_p_is.html#gaf441be1cd05cf07173e2b5d36fa8a843">GPIOPinFunCfg</a></div><div class="ttdeci">void GPIOPinFunCfg(unsigned long ulPort, unsigned long ulPin, unsigned long ulCfg)</div><div class="ttdoc">Configure GPIO function. This function map gpio to special function. </div><div class="ttdef"><b>Definition:</b> <a href="xgpio_8c_source.html#l00429">xgpio.c:429</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01547">1547</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -786,7 +990,35 @@ CoX Port Details</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01287">1287</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01466">1466</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5dcc6ac16b3418a5ba424315c132faa8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define xSPinTypeACMP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ePeripheralPin, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">eShortPin&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="_co_x__base_8h.html#a00b2a906d5d6977c7d20e156c52e691f">GPIOSPinConfigure</a>(ePeripheralPin, eShortPin)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01926">1926</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -875,7 +1107,7 @@ CoX Port Details</h1>
 </table>
 <p>+--------------&mdash;+----------------------&mdash;+-----------------------&mdash;+ </p>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01418">1418</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01605">1605</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -935,7 +1167,7 @@ CoX Port Details</h1>
 |                    |     CAN2TX              |     PA5   PC8            |
 +--------------------+-------------------------+--------------------------+</pre> </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01460">1460</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01647">1647</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -1007,7 +1239,7 @@ CoX Port Details</h1>
 </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01736">1736</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01923">1923</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -1066,7 +1298,35 @@ CoX Port Details</h1>
 |                    |     I2C2SCK             |     PA11                 |
 |--------------------|-------------------------|--------------------------|</pre> </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01501">1501</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01688">1688</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2a117d0c881785795f1a4bc2ec3c822e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define xSPinTypeI2S</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ePeripheralPin, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">eShortPin&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="_co_x__base_8h.html#a00b2a906d5d6977c7d20e156c52e691f">GPIOSPinConfigure</a>(ePeripheralPin, eShortPin)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01929">1929</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -1125,7 +1385,7 @@ CoX Port Details</h1>
 |                    |          PWM6           |     PB26/PC5             |
 +--------------------+-------------------------+--------------------------+</pre> </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01541">1541</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01728">1728</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -1207,7 +1467,7 @@ xSPinTypeSPI(SPI0CLK, PA4)  --&gt; Error
 </table>
 <p>+-----------------&mdash;+----------------------&mdash;+-----------------------&mdash;+ </p>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01590">1590</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01777">1777</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -1285,7 +1545,7 @@ xSPinTypeTimer(TIMCCP0, PB6)  --&gt; Error
 </table>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Finish Cox Timer Pin map </dd></dl>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01637">1637</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01824">1824</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -1363,7 +1623,7 @@ xSPinTypeUART(UART0RX, PA1)  --&gt; Error
 </table>
 <p>| | ----------------------&mdash; ---------------------&mdash; | | | UART1TX | PA15 PC0 | | | UART1RX | PA16 PC1 | | | UART1CTS | PA17 PC2 | | | UART1DCD | PA18 PC3 | | | UART1DSR | PA19 PC4 | | LPC17xx | UART1DTR | PA20 PC5 | | | UART1RI | PA21 PC6 | | | UART1RTS | PA22 PC7 | | | ----------------------&mdash; ---------------------&mdash; | | | UART2TX | PA10 PC8 | | | UART2RX | PA11 PC9 | | | ----------------------&mdash; ---------------------&mdash; | | | UART3TX | PA0 PA25 PE28 | | | UART3RX | PA1 PA26 PE29 | |----------------------------------------------------------------------&mdash;| </p>
 
-<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01699">1699</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
+<p>Definition at line <a class="el" href="xgpio_8h_source.html#l01886">1886</a> of file <a class="el" href="xgpio_8h_source.html">xgpio.h</a>.</p>
 
 </div>
 </div>
@@ -1467,7 +1727,7 @@ xSPinTypeUART(UART0RX, PA1)  --&gt; Error
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>xGPIOPadConfigSet() must also be used to configure the corresponding pad(s) in order for them to propagate the signal to/from the GPIO. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="group__x_g_p_i_o___exported___a_p_is.html#gabdb21ec64802023eba84336596b877ec">xGPIOPadConfigSet()</a> must also be used to configure the corresponding pad(s) in order for them to propagate the signal to/from the GPIO. </dd></dl>
 
 <p>Definition at line <a class="el" href="xgpio_8c_source.html#l00121">121</a> of file <a class="el" href="xgpio_8c_source.html">xgpio.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>

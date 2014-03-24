@@ -706,6 +706,73 @@ extern "C"
 #define PG30                     PG30
 #define PG31                     PG31
 
+
+#define PH0                      PH0
+#define PH1                      PH1
+#define PH2                      PH2
+#define PH3                      PH3
+#define PH4                      PH4
+#define PH5                      PH5
+#define PH6                      PH6
+#define PH7                      PH7
+#define PH8                      PH8
+#define PH9                      PH9
+#define PH10                     PH10
+#define PH11                     PH11
+#define PH12                     PH12
+#define PH13                     PH13
+#define PH14                     PH14
+#define PH15                     PH15
+#define PH16                     PH16
+#define PH17                     PH17
+#define PH18                     PH18
+#define PH19                     PH19
+#define PH20                     PH20
+#define PH21                     PH21
+#define PH22                     PH22
+#define PH23                     PH23
+#define PH24                     PH24
+#define PH25                     PH25
+#define PH26                     PH26
+#define PH27                     PH27
+#define PH28                     PH28
+#define PH29                     PH29
+#define PH30                     PH30
+#define PH31                     PH31
+
+#define PJ0                      PJ0
+#define PJ1                      PJ1
+#define PJ2                      PJ2
+#define PJ3                      PJ3
+#define PJ4                      PJ4
+#define PJ5                      PJ5
+#define PJ6                      PJ6
+#define PJ7                      PJ7
+#define PJ8                      PJ8
+#define PJ9                      PJ9
+#define PJ10                     PJ10
+#define PJ11                     PJ11
+#define PJ12                     PJ12
+#define PJ13                     PJ13
+#define PJ14                     PJ14
+#define PJ15                     PJ15
+#define PJ16                     PJ16
+#define PJ17                     PJ17
+#define PJ18                     PJ18
+#define PJ19                     PJ19
+#define PJ20                     PJ20
+#define PJ21                     PJ21
+#define PJ22                     PJ22
+#define PJ23                     PJ23
+#define PJ24                     PJ24
+#define PJ25                     PJ25
+#define PJ26                     PJ26
+#define PJ27                     PJ27
+#define PJ28                     PJ28
+#define PJ29                     PJ29
+#define PJ30                     PJ30
+#define PJ31                     PJ31
+
 //*****************************************************************************
 //
 //! @}
@@ -750,12 +817,15 @@ extern "C"
 //*****************************************************************************
 
 //! PWM Pin Type
+#define PWM0                    PWM0
 #define PWM1                    PWM1
 #define PWM2                    PWM2
 #define PWM3                    PWM3
 #define PWM4                    PWM4
 #define PWM5                    PWM5
 #define PWM6                    PWM6
+#define PWM7                    PWM7
+#define PWM8                    PWM8
 
 
 //! UART Pin Type
@@ -819,6 +889,11 @@ extern "C"
 #define ADC13                   ADC13
 #define ADC14                   ADC14
 #define ADC15                   ADC15
+#define ADC16                   ADC16
+#define ADC17                   ADC17
+#define ADC18                   ADC18
+#define ADC19                   ADC19
+#define ADC20                   ADC20
 
 #define CMP0N                   CMP0N
 #define CMP0P                   CMP0P
@@ -837,10 +912,7 @@ extern "C"
 #define TIMCCP5                 TIMCCP5
 #define TIMCCP6                 TIMCCP6
 #define TIMCCP7                 TIMCCP7
-#define TIM_MAT0                TIM_MAT0
-#define TIM_MAT1                TIM_MAT1
-#define TIM_MAT2                TIM_MAT2
-#define TIM_MAT3                TIM_MAT3
+
 
 //! SPI Pin Type
 #define SPI0CLK                 SPI0CLK
@@ -869,6 +941,25 @@ extern "C"
 #define CAN1TX                  CAN1TX
 #define CAN2RX                  CAN2RX
 #define CAN2TX                  CAN2TX
+
+//! I2S Pin Type
+#define I2S0RXSCK               I2S0RXSCK
+#define I2S0RXMCLK              I2S0RXMCLK
+#define I2S0RXSD                I2S0RXSD
+#define I2S0RXWS                I2S0RXWS
+#define I2S0TXSCK               I2S0TXSCK
+#define I2S0TXMCLK              I2S0TXMCLK
+#define I2S0TXSD                I2S0TXSD
+#define I2S0TXWS                I2S0TXWS
+#define I2S1RXSCK               I2S1RXSCK
+#define I2S1RXMCLK              I2S1RXMCLK
+#define I2S1RXSD                I2S1RXSD
+#define I2S1RXWS                I2S1RXWS
+#define I2S1TXSCK               I2S1TXSCK
+#define I2S1TXMCLK              I2S1TXMCLK
+#define I2S1TXSD                I2S1TXSD
+#define I2S1TXWS                I2S1TXWS
+
 
 //*****************************************************************************
 //
@@ -917,6 +1008,7 @@ extern "C"
 //! |  \ref xSPinTypeTimer            |    Mandatory   |            Y           |
 //! |  \ref xSPinTypeUART             |    Mandatory   |            Y           |
 //! |  \ref xSPinTypeACMP             |    Mandatory   |            N           |
+//! |  \ref xSPinTypeI2S              |    Mandatory   |            N           |
 //!
 //! @{
 //
@@ -1068,6 +1160,79 @@ extern void xGPIODirModeSet(unsigned long ulPort, unsigned long ulPins,
 //*****************************************************************************
 extern unsigned long xGPIODirModeGet(unsigned long ulPort, unsigned long ulPin);
 
+
+//*****************************************************************************
+//
+//! \brief Sets the pad configuration for the specified pin(s).
+//!
+//! \param ulPort is the base address of the GPIO port.
+//! \param ucPins is the bit-packed representation of the pin(s).
+//! \param ulStrength specifies the output drive strength.
+//! \param ulPinType specifies the pin type.
+//!
+//! This function sets the drive strength and type for the specified pin(s)
+//! on the selected GPIO port.  For pin(s) configured as input ports, the
+//! pad is configured as requested, but the only real effect on the input
+//! is the configuration of the pull-up or pull-down termination.
+//!
+//! The parameter \e ulStrength can be one of the following values:
+//!
+//! - \b xGPIO_STRENGTH_2MA
+//! - \b xGPIO_STRENGTH_4MA
+//! - \b xGPIO_STRENGTH_8MA
+//!
+//! where \b xGPIO_STRENGTH_xMA specifies either 2, 4, or 8 mA output drive
+//! strength, and \b xGPIO_OUT_STRENGTH_8MA_SC specifies 8 mA output drive with
+//! slew control.
+//!
+//! The parameter \e ulPinType can be one of the following values:
+//!
+//! - \b xGPIO_PIN_TYPE_STD
+//! - \b xGPIO_PIN_TYPE_STD_WPU
+//! - \b xGPIO_PIN_TYPE_STD_WPD
+//! - \b xGPIO_PIN_TYPE_OD
+//! - \b xGPIO_PIN_TYPE_OD_WPU
+//! - \b xGPIO_PIN_TYPE_OD_WPD
+//! - \b xGPIO_PIN_TYPE_ANALOG
+//!
+//! where \b xGPIO_PIN_TYPE_STD* specifies a push-pull pin, \b xGPIO_PIN_TYPE_OD*
+//! specifies an open-drain pin, \b *_WPU specifies a weak pull-up, \b *_WPD
+//! specifies a weak pull-down, and \b xGPIO_PIN_TYPE_ANALOG specifies an
+//! analog input (for the comparators).
+//!
+//! The pin(s) are specified using a bit-packed byte, where each bit that is
+//! set identifies the pin to be accessed, and where bit 0 of the byte
+//! represents GPIO port pin 0, bit 1 represents GPIO port pin 1, and so on.
+//!
+//! \return None.
+//
+//*****************************************************************************
+#define xGPIOPadConfigSet(ulPort, ulPins, ulStrength, ulPadType)              \
+        0
+
+//*****************************************************************************
+//
+//! \brief Gets the pad configuration for a pin.
+//!
+//! \param ulPort is the base address of the GPIO port.
+//! \param ucPin is the pin number.
+//! \param pulStrength is a pointer to storage for the output drive strength.
+//! \param pulPinType is a pointer to storage for the output drive type.
+//!
+//! This function gets the pad configuration for a specified pin on the
+//! selected GPIO port.  The values returned in \e pulStrength and
+//! \e pulPinType correspond to the values used in xGPIOPadConfigSet().  This
+//! function also works for pin(s) configured as input pin(s); however, the
+//! only meaningful data returned is whether the pin is terminated with a
+//! pull-up or down resistor.
+//!
+//! \return None.
+//
+//*****************************************************************************
+#define xGPIOPadConfigGet(ulPort, ulPin, pulStrength, pulPadType)             \
+        0
+
+
 //*****************************************************************************
 //
 //! \brief  Register user's gpio interrupt function.
@@ -1081,6 +1246,20 @@ extern unsigned long xGPIODirModeGet(unsigned long ulPort, unsigned long ulPin);
 //*****************************************************************************
 extern void xGPIOPinIntCallbackInit(unsigned long ulPort, unsigned long ulPin,
                                    xtEventCallback xtPortCallback);
+
+//*****************************************************************************
+//
+//! \brief  Register user's gpio interrupt function..
+//!
+//! \param  [in] eShortPin Specified port and pin.
+//! \param  [in] pfnCallback pfnCallback is the callback function.
+//!
+//! \return None.
+//!
+//
+//*****************************************************************************
+#define xGPIOSPinIntCallbackInit(eShortPin, xtPortCallback)                   \
+        xGPIOPinIntCallbackInit(G##eShortPin, xtPortCallback)
 
 //*****************************************************************************
 //
@@ -1361,6 +1540,14 @@ extern void xGPIOPinWrite(unsigned long ulPort, unsigned long ulPins,
         {                                                                     \
             GPIOPinFunCfg(G##eShortPin, GPIO_##eShortPin##_eShortPin);        \
             GPIOPinModeCfg(G##eShortPin, PIN_MODE_OD_EN);                     \
+        }                                                                     \
+        while(0)
+
+
+#define xGPIOSPinTypeGPIOOutputQB(eShortPin)                                  \
+        do                                                                    \
+        {                                                                     \
+            GPIOPinFunCfg(G##eShortPin, GPIO_##eShortPin##_##eShortPin);      \
         }                                                                     \
         while(0)
 
@@ -1734,6 +1921,12 @@ extern void xGPIOPinWrite(unsigned long ulPort, unsigned long ulPins,
 //
 //*****************************************************************************
 #define xSPinTypeDAC(ePeripheralPin, eShortPin)                               \
+        GPIOSPinConfigure(ePeripheralPin, eShortPin)
+
+#define xSPinTypeACMP(ePeripheralPin, eShortPin)                              \
+        GPIOSPinConfigure(ePeripheralPin, eShortPin)
+
+#define xSPinTypeI2S(ePeripheralPin, eShortPin)                               \
         GPIOSPinConfigure(ePeripheralPin, eShortPin)
 
 //*****************************************************************************
